@@ -5,6 +5,9 @@ const app = express();
 //allocating port for the server
 const port = 8000;
 
+//database 
+const db =  require('./config/mongoose');
+
 //Starting the server
 app.listen(port, function(err){
     if(err){
