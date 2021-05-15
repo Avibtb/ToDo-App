@@ -5,6 +5,9 @@ const app = express();
 //allocating port for the server
 const port = 8000;
 
+//using body parser for parsing the data
+app.use(express.urlencoded({extended:true}));
+
 //database 
 const db =  require('./config/mongoose');
 
