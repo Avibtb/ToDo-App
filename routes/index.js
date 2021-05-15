@@ -22,5 +22,5 @@ router.post('/delete-task', homeController.deleteSelected);
 // Delete Single todo
 router.get('/delete-task/:id', homeController.delete);
 
-// Export router
+// Export router to use further anywhere in the whole program
 module.exports = router;
