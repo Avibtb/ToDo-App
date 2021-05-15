@@ -1,4 +1,4 @@
-// Import task model
+// Import the  task model
 const Task = require('../models/task');
 
 // Action for showing todos
