@@ -1,72 +1,76 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,300&display=swap" rel="stylesheet">
+    <!-- Title -->
     <title>
-        <!--Title-->
         <%= title %>
     </title>
-
-    <!--Linking the CSS file-->
-    <link rel="stylesheet" href="">
+    <!-- Font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Css for todo -->
+    <link rel="stylesheet" href="/css/home.css">
 </head>
-<body>
 
-    <!--Main container-->
-    <div class="main-contianer">
-    
-        <!--Heading-->
-        <div class="heading">
+<body>
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Heading -->
+        <div class="heading border-bottom">
             <h1>TODO App</h1>
         </div>
-        <!--Heading End-->
+        <!-- End Heading -->
 
-        <!--Creating Todo-->
+        <!-- Form for creating Todo -->
         <div class="form-container">
-            <form action="/create-task" class="main-task" id="task-form" method="POST">
-                <div class="description">
+            <form action="/create-task" class="form" id="create-form" method="POST">
+                <div class="description hover border-bottom">
                     <label for="description">Description</label>
-                    <input type="text" name="description" id="#description" placeholder="What do you need to do?" required>
+                    <input type="text" name="description" id="#description" placeholder="What do you need to do?"
+                        required>
                 </div>
-
-                <!--for category -->
-                <div class="categoryy">
+                <div class="category-date-container border-bottom">
                     <div class="category hover">
                         <label for="category">Category</label>
-                        <select name="category" id="#ctegory" required>
-                            <option value="">Choose a  category</option>
-                            <option value="work">Work</option>
-                            <option value="school">School</option>
-                            <option value="personal">Personal</option>
-                            <option value="other">Other's</option>
+                        <select name="category" id="#category" required>
+                            <option value="">Choose a category</option>
+                            <option value="work">work</option>
+                            <option value="school">school</option>
+                            <option value="personal">personal</option>
+                            <option value="other">other</option>
                         </select>
-
                     </div>
-                    <!--for date-->
-                    <div class="date">
+
+                    <div class="date hover">
                         <label for="date">Due Date</label>
                         <input type="date" name="date" id="#date" required>
-
-                    </div>
+                    </div>                   
                 </div>
+
             </form>
         </div>
-        <!--End of creating todo-->
+        <!-- End Form for creating Todo -->
 
-        <!--different action buttons-->
-        <div class="action">
-            <button class="btn add" type="submit" form="task-form">
-                <i class="fas fa-plus"></i>Add Task
+        <!-- Actions .i.e Create and Delete Buttons -->
+        <div class="action border-bottom">
+            <!--adding add button-->
+            <button class="btn add" type="submit" form="create-form">
+                <i class="fas fa-plus"></i> Add Task
             </button>
-            <!--delete button-->
-            <button class="btn delete" type="submit" form="delete-form"> 
-                <i class="fas fa-trash-alt"></i>Delete Tasks
+            <!--adding delete button-->
+            <button class="btn delete" type="submit" form="delete-form">
+                <i class="fas fa-trash-alt"></i> Delete Tasks
             </button>
         </div>
-        <!--End of action buttons-->
+        <!-- End Actions .i.e Create and Delete Buttons -->
 
-        <!--Task container-->
+        <!-- TOdos Conrainer -->
         <div class="tasks-container">
             <form action="/delete-task" method="post" id="delete-form">
                 <% for(let task of tasks){ %>
@@ -88,9 +92,11 @@
                 <% } %>
             </form>
         </div>
-      <!--End of task container-->
+        <!-- End TOdos Conrainer -->
 
     </div>
-    <!--End of main container>
+    <!-- End Container -->
+
 </body>
+
 </html>
