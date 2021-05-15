@@ -65,8 +65,32 @@
             </button>
         </div>
         <!--End of action buttons-->
-    </div>
 
-    
+        <!--Task container-->
+        <div class="tasks-container">
+            <form action="/delete-task" method="post" id="delete-form">
+                <% for(let task of tasks){ %>
+                <div class="task border-bottom">
+                    <input type="checkbox" name="task" value="<%= task._id %>" >
+                    <div class="task-detail">
+                        <p class="desc"><%= task.description %></p>
+                        <span class="due-date">
+                            <i class="fas fa-calendar"></i> <%= task.dueDate.toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' }) %>
+                        </span>
+                    </div>
+                    <div class="task-category <%= task.category %>">
+                        <%= task.category %>
+                    </div>
+                    <div class="delete-task">
+                        <a href="/delete-task/<%= task._id %>"><i class="fas fa-trash"></i></a>
+                    </div>
+                </div>
+                <% } %>
+            </form>
+        </div>
+      <!--End of task container-->
+
+    </div>
+    <!--End of main container->
 </body>
 </html>
