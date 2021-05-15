@@ -1,25 +1,31 @@
-//import express
+// import express
 const express = require('express');
 const app = express();
 
-//allocating port for the server
+// Assigning port for server
 const port = 8000;
 
-//using body parser for parsing the data
-app.use(express.urlencoded({extended:true}));
+// Use body parser for parsing form data
+app.use(express.urlencoded({extended: true}));
 
-//database 
-const db =  require('./config/mongoose');
+// use express router
+app.use('/', require('./routes'));
 
-//rendering ejs 
+// database
+const db = require('./config/mongoose');
+
+// view engine
 app.set('view engine', 'ejs');
-app.set('views' ,'./views/main.ejs');
+app.set('views', './views');
 
-//Starting the server
-app.listen(port, function(err){
+// static files
+app.use(express.static('assets'));
+
+// Starting server
+app.listen(port, err => {
     if(err){
-        console.log(`Error in runnig the server${err}`);
+        console.log(`Error in running server ${err}`);
         return;
     }
-    console.log(`Server is successfully running at port : ${port}`);
+    console.log(`Server is running at port : ${port}`);
 });
