@@ -13,11 +13,12 @@
 - Add task according to date.
 
 ### Technical Exposure
--Node.js
--Expressjs
--ejs
--CSS
--MongoDB
+- Node.js
+- Expressjs
+- MongoDB
+- ejs
+- CSS
+
 
 
 
