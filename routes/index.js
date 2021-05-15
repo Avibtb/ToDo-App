@@ -1,24 +1,26 @@
-// import express 
+
+// Import express
 const express = require('express');
 
-// import main controller
-const mainController = require("");
+// Import home controller
+const homeController = require("../controllers/home_controller")
 
-// creating router
+// create router
 const router = express.Router();
-console.log("router loaded successfully");
 
-// main page route
-router.get('/', mainController.main);
+console.log("router loaded");
 
-// create todo route
-router.post('/create-task', mainController.create);
+// home page route
+router.get('/', homeController.home);
 
-// delete single todo route
-router.get('/delete-task:id', mainController.delete);
+// Create todo route
+router.post('/create-task', homeController.create);
 
-//delete multiple todo tasks route
-router.post('/delete-task',mainController.deleteSelected);
+// Delete multiple todo route
+router.post('/delete-task', homeController.deleteSelected);
 
-//Export router
+// Delete Single todo
+router.get('/delete-task/:id', homeController.delete);
+
+// Export router
 module.exports = router;
