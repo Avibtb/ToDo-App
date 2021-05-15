@@ -1,7 +1,7 @@
-// import mongoose
+// import mongoose library
 const mongoose = require('mongoose');
 
-// Create task schema
+// Create task db schema
 const taskSchema = new mongoose.Schema({
     description : {
         type: String,
@@ -20,5 +20,5 @@ const taskSchema = new mongoose.Schema({
 // Creating model
 const Task = mongoose.model("Task", taskSchema);
 
-// Export Task model
+// Export Task model to use further in whole app
 module.exports = Task
