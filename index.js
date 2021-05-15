@@ -11,6 +11,10 @@ app.use(express.urlencoded({extended:true}));
 //database 
 const db =  require('./config/mongoose');
 
+//rendering ejs 
+app.set('view engine', 'ejs');
+app.set('views' ,'./views/main.ejs');
+
 //Starting the server
 app.listen(port, function(err){
     if(err){
