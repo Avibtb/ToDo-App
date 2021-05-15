@@ -1,4 +1,4 @@
-// import the library
+// import the mongoose library 
 const mongoose = require('mongoose');
 
 // connect to mongodb
